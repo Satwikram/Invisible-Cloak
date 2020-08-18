@@ -14,7 +14,7 @@ count = 0
 background = 0
 
 for i in range(60):
-    ret, background = cv2.read()
+    ret, background = cap.read()
 
 background = np.flip(background, axis = 1)
 
@@ -24,7 +24,7 @@ while (cap.isOpened()):
     if not ret:
         break
     count = count + 1
-    img = np.flip(img, axis=1)
+    img = np.flip(image, axis=1)
 
     ## Convert the color space from BGR to HSV
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
